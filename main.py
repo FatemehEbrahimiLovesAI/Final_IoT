@@ -71,7 +71,7 @@ def oled_clear():
 # RTC function    
 def get_rtc_time():
     dt = time.localtime()  
-    return f"{dt[0]}/{dt[1]}/{dt[2]}-{dt[4]}:{dt[5]}:{dt[6]}"
+    return f"{dt[0]}/{dt[1]}/{dt[2]}-{dt[3]}:{dt[4]}:{dt[5]}"
 
 
 # fire animation
@@ -120,6 +120,7 @@ def movement_oled():
     oled_clear()
     oled_write("Somebody is",5,30)
     oled_write("too close!!!!",5,40)
+    oled_write(get_rtc_time(), 5, 50)
 
 
 # Motion detector
